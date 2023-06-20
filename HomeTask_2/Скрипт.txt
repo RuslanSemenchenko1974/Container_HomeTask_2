@@ -1,0 +1,9 @@
+sudo lxc-create -n test12345 -t ubuntu
+sudo lxc-start -n test12345
+sudo lxc-attach -n test12345
+
+free -m
+exit
+sudo lxc-cgroup -n test12345 memory.max 256M
+sudo lxc-attach -n test12345
+free -m
